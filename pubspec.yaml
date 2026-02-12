@@ -1,7 +1,8 @@
 name: async_stats
-description: "A new Flutter package project."
-version: 0.0.1
-homepage:
+description: "Simple statistics about async code execution."
+version: 0.1.0
+repository: https://github.com/qoob23/async_stats
+publish_to: https://pub.dev
 
 environment:
   sdk: ^3.5.4

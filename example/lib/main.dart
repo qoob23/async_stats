@@ -8,24 +8,24 @@ void main() {
   const duration = Duration(milliseconds: 100);
   final trackedZone = RunningTrackedZone(granularity: duration);
 
-  void spawnShit() => Future(() {
-    final random = Random();
-    final timers = random.nextInt(25);
-    for (var i = 0; i < timers; i++) {
-      Future(() {
-        final microtasks = random.nextInt(10);
-        for (var i = 0; i < microtasks; i++) {
-          scheduleMicrotask(() {
-            // no-op
+  void spawnMicrotasks() => Future(() {
+        final random = Random();
+        final timers = random.nextInt(25);
+        for (var i = 0; i < timers; i++) {
+          Future(() {
+            final microtasks = random.nextInt(10);
+            for (var i = 0; i < microtasks; i++) {
+              scheduleMicrotask(() {
+                // no-op
+              });
+            }
           });
         }
+        Future.delayed(duration, () => spawnMicrotasks());
       });
-    }
-    Future.delayed(duration, () => spawnShit());
-  });
 
   trackedZone.runWithStats(() {
-    spawnShit();
+    spawnMicrotasks();
     runApp(const MyApp());
   });
 }

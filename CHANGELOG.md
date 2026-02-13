@@ -1,3 +1,7 @@
+## 0.1.1
+
+* Update example
+
 ## 0.1.0
 
 * Add a `RunningTrackedZone` to track timers and microtasks.

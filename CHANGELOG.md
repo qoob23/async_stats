@@ -1,3 +1,7 @@
+## 0.1.2
+
+* Remove image assets from example
+
 ## 0.1.1
 
 * Update example

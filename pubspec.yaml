@@ -1,6 +1,6 @@
 name: async_stats
 description: "Simple statistics about async code execution."
-version: 0.1.1
+version: 0.1.2
 
 repository: https://github.com/qoob23/async_stats
 homepage: https://github.com/qoob23/async_stats
